@@ -1,8 +1,12 @@
 import XCTest
 import Foundation
+import OHHTTPStubs
+import OHHTTPStubsSwift
 @testable import HTTPEngine
 
 final class HTTPEngineTests: XCTestCase {
+    
+    // MARK: - Build Request
     
     func testBuildRequestContainsAcceptEncodingByDefault() {
         HTTPMethod.allCases.forEach {
@@ -59,6 +63,64 @@ final class HTTPEngineTests: XCTestCase {
         let request = HTTPEngine().buildRequest(method: .get, url: URL(string: "www.google.com")!)
         XCTAssertEqual(request.httpMethod, "GET")
     }
+    
+    // MARK: - Make Request
+    
+    func testMakeRequestFailsWithUnexpectedResponseCode() {
+        stub(condition: isHost("google.com") && isMethodGET()) { _ in
+            HTTPStubsResponse(jsonObject: [:], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .makeRequest(method: .get, url: "https://google.com", validator:  { $0 == 202 })
+            .assertError(test: self) {
+                switch $0 {
+                case Errors.Response.unexpectedStatusCode(let response):
+                    XCTAssertEqual(response.statusCode, 200)
+                default: XCTFail(#function)
+                }
+        }
+    }
+    
+    func testMakeRequestSucceedsIn200RangeByDefault() {
+        for statusCode in (200...299) {
+            stub(condition: isHost("google.com") && isMethodGET()) { _ in
+                HTTPStubsResponse(jsonObject: ["key":"value"], statusCode: Int32(statusCode), headers: nil)
+            }
+
+            HTTPEngine()
+                .makeRequest(method: .get, url: "https://google.com")
+                .assertResult(test: self) {
+                    XCTAssertEqual(
+                        ["key": "value"],
+                        try? JSONSerialization.jsonObject(with: $0, options: []) as? [String: String]
+                    )
+            }
+        }
+    }
+    
+    
+    func testMakeRequestFailsOutsideOf200RangeByDefault() {
+        stub(condition: isHost("google.com") && isMethodGET()) { _ in
+            HTTPStubsResponse(jsonObject: [:], statusCode: 300, headers: nil)
+        }
+
+        HTTPEngine()
+            .makeRequest(method: .get, url: "https://google.com")
+            .assertError(test: self) {
+                XCTAssertEqual($0.localizedDescription, Errors.Response.redirect(300).localizedDescription)
+        }
+        
+        stub(condition: isHost("google.com") && isMethodGET()) { _ in
+            HTTPStubsResponse(jsonObject: [:], statusCode: 199, headers: nil)
+        }
+
+        HTTPEngine()
+            .makeRequest(method: .get, url: "https://google.com")
+            .assertError(test: self) {
+                XCTAssertEqual($0.localizedDescription, Errors.Response.errorWith(statusCode: 199)?.localizedDescription)
+        }
+    }
 
     
     static var allTests = [
@@ -68,6 +130,10 @@ final class HTTPEngineTests: XCTestCase {
         ("Non Put Patch Post do not contain content type header", testNonPostPatchPutMethodsDoNotContainDefaultContentTypeHeader),
         ("Build request overrides content type header", testBuildRequestOverridesContentTypeHeader),
         ("Build Request applies body to request", testBuildRequestAppliesBodyToRequest),
-        ("Build Request applies Method to request", testBuildRequestAppliesMethodToRequest)
+        ("Build Request applies Method to request", testBuildRequestAppliesMethodToRequest),
+        ("Make Request Fails with invalid status code",
+         testMakeRequestFailsWithUnexpectedResponseCode),
+        ("Make Request Succeeds in 200 range by default", testMakeRequestSucceedsIn200RangeByDefault),
+        ("Make request fails outside of 200 range by default", testMakeRequestFailsOutsideOf200RangeByDefault)
     ]
 }
