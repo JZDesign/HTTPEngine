@@ -151,7 +151,7 @@ public extension HTTPEngine {
         url: String,
         validator: ResponseValidationClosure? = nil
     ) -> AnyPublisher<Response, Error> {
-        makeRequestAndParseResponse(value.self, method: .post, url: url, body: nil as NilBody?, validator: validator)
+        post(value.self, url: url, body: nil as NilBody?, validator: validator)
     }
 }
 
