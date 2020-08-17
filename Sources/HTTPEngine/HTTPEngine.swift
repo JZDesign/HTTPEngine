@@ -8,6 +8,23 @@ public typealias ResponseValidationClosure = (Int) -> ValidResponse
 public struct HTTPEngine {
     public init() {}
 
+
+    /// Creates a URLRequest Object
+    /// - Parameters:
+    ///   - method: HTTPMethod - `.get, .put. post` etc.,
+    ///   - url: A URL Object
+    ///   - body: Data?: The body data to send with a request
+    ///   - header: A dictionary of HTTP Request Headers - `["Content-Type": "text", "Some Key": "Some Value"]`
+    /// - Returns: A fully constructed URLRequest
+    ///
+    ///    -- Headers
+    ///
+    ///    By default all requests have the `["Accept-Encoding": "gzip;q=1.0,compress;q=0.5"]` header included.
+    ///
+    ///    All `.post, .put, & .patch` requests also contain `["Content-Type": "application/json"]` by default.
+    ///
+    ///    These values can be overridden by including those headers as arguments when calling this function
+    ///
     public func buildRequest(
         method: HTTPMethod,
         url: URL,
@@ -32,7 +49,33 @@ public struct HTTPEngine {
 
         return request
     }
-    
+
+
+    /// Makes a request via HTTP
+    /// - Parameters:
+    ///   - method: HTTPMethod - `.get, .put. post` etc.,
+    ///   - urlString: URL domain + path as a string: `"abc.com/some/path"`
+    ///   - body: Data?: The body data to send with a request
+    ///   - header: A dictionary of HTTP Request Headers - `["Content-Type": "text", "Some Key": "Some Value"]`
+    ///   - validator: `(Int) -> Bool` - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.
+    ///
+    /// - Returns: AnyPubliser<Data, Error>
+    ///
+    ///    -- Headers
+    ///
+    ///    By default all requests have the `["Accept-Encoding": "gzip;q=1.0,compress;q=0.5"]` header included.
+    ///
+    ///    All `.post, .put, & .patch` requests also contain `["Content-Type": "application/json"]` by default.
+    ///
+    ///    These values can be overridden by including those headers as arguments when calling this function
+    ///
+    ///    -- Validation
+    ///
+    ///    By default the validation checks for a 200-299 status code and fails if the code is out of bounds
+    ///    ```swift
+    ///    // example validator
+    ///    validator: { $0 == 202 }
+    ///    ```
     public func makeRequest(
         method: HTTPMethod,
         url urlString: String,
@@ -54,8 +97,9 @@ public struct HTTPEngine {
             }
         .eraseToAnyPublisher()
     }
-    
-    func validateResponse(_ response: URLResponse?, validator: ResponseValidationClosure? = nil) throws {
+
+
+    private func validateResponse(_ response: URLResponse?, validator: ResponseValidationClosure? = nil) throws {
         let response = try response as? HTTPURLResponse ??? Errors.Response.couldNotRetrieveStatusCode
 
         guard let validator = validator else {
