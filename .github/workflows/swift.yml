@@ -17,3 +17,6 @@ jobs:
       run: swift build -v
     - name: Run tests
       run: swift test -v
+    - name: Publish Jazzy Docs
+      uses: Steven0351/publish-jazzy-docs@v1.1.2
+
