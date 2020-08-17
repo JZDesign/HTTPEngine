@@ -155,5 +155,4 @@ public extension HTTPEngine {
     }
 }
 
-private struct NilBody: Encodable {
-}
+private struct NilBody: Encodable {}
