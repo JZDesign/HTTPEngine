@@ -3,7 +3,7 @@ import Combine
 
 public extension HTTPEngine {
     
-    /// Makes a request via HTTP
+    /// Makes a request via HTTP and Decodes the response
     /// - Parameters:
     ///   - decodableResponse: Decodable - An object that represents the response body
     ///   - method: HTTPMethod - `.get, .put. post` etc.,
@@ -39,7 +39,7 @@ public extension HTTPEngine {
     }
 
 
-    /// Makes a request via HTTP
+    /// Makes a request via HTTP, Encodes the body and Decodes the response
     /// - Parameters:
     ///   - decodableResponse: Decodable - An object that represents the response body
     ///   - method: HTTPMethod - `.get, .put. post` etc.,
@@ -79,4 +79,81 @@ public extension HTTPEngine {
             .decode(type: decodableResponse.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
+    
+    
+    /// Makes a request via HTTP and Decodes the response
+    /// - Parameters:
+    ///   - decodableResponse: Decodable - An object that represents the response body
+    ///   - urlString: URL domain + path as a string: `"abc.com/some/path"`
+    ///   - validator: `(Int) -> Bool` - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.
+    ///
+    /// - Returns: AnyPubliser<Data, Error>
+    ///
+    ///    -- Validation
+    ///
+    ///    By default the validation checks for a 200-299 status code and fails if the code is out of bounds
+    ///    ```swift
+    ///    // example validator
+    ///    validator: { $0 == 202 }
+    ///    ```
+    func get<Response: Decodable>(
+        _ value: Response.Type,
+        url: String,
+        validator: ResponseValidationClosure? = nil
+    ) -> AnyPublisher<Response, Error> {
+        makeRequestAndParseResponse(value.self, method: .get, url: url, validator: validator)
+    }
+
+
+    /// Makes a request via HTTP, Encodes the body and Decodes the response
+    /// - Parameters:
+    ///   - decodableResponse: Decodable - An object that represents the response body
+    ///   - urlString: URL domain + path as a string: `"abc.com/some/path"`
+    ///   - body: Encodable?: The encodable object that represents body data to send with a request
+    ///   - validator: `(Int) -> Bool` - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.
+    ///
+    /// - Returns: AnyPubliser<Data, Error>
+    ///
+    ///    -- Validation
+    ///
+    ///    By default the validation checks for a 200-299 status code and fails if the code is out of bounds
+    ///    ```swift
+    ///    // example validator
+    ///    validator: { $0 == 202 }
+    ///    ```
+    func post<Response: Decodable, Body: Encodable>(
+        _ value: Response.Type,
+        url: String,
+        body: Body? = nil,
+        validator: ResponseValidationClosure? = nil
+    ) -> AnyPublisher<Response, Error> {
+        makeRequestAndParseResponse(value.self, method: .post, url: url, body: body, validator: validator)
+    }
+
+    
+    /// Makes a request via HTTP, Encodes the body and Decodes the response
+    /// - Parameters:
+    ///   - decodableResponse: Decodable - An object that represents the response body
+    ///   - urlString: URL domain + path as a string: `"abc.com/some/path"`
+    ///   - validator: `(Int) -> Bool` - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.
+    ///
+    /// - Returns: AnyPubliser<Data, Error>
+    ///
+    ///    -- Validation
+    ///
+    ///    By default the validation checks for a 200-299 status code and fails if the code is out of bounds
+    ///    ```swift
+    ///    // example validator
+    ///    validator: { $0 == 202 }
+    ///    ```
+    func post<Response: Decodable>(
+        _ value: Response.Type,
+        url: String,
+        validator: ResponseValidationClosure? = nil
+    ) -> AnyPublisher<Response, Error> {
+        makeRequestAndParseResponse(value.self, method: .post, url: url, body: nil as NilBody?, validator: validator)
+    }
+}
+
+private struct NilBody: Encodable {
 }

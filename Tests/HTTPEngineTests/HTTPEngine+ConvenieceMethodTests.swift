@@ -9,6 +9,8 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
     ("make request and parse response decodes into type", testMakeRequestAndParseResponseDecodesIntoType),
     ("make request and parse response throws if Decode fails", testMakeRequestAndParseResponseThrowsIfDecodeFails),
     ("make request and parse response Encodes and Decodes into type", testMakeRequestAndParseResponseEncodesAndDecodesIntoType),
+    ("get succeeds", testGetSucceeds),
+    ("post succeeds", testPostSucceeds),
     ]
     
     func testMakeRequestAndParseResponseDecodesIntoType() {
@@ -43,7 +45,31 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
             .assertResult(test: self) {
                 XCTAssertEqual($0.key, "value")
         }
-        
+    }
+    
+    func testGetSucceeds() {
+        stub(condition: isHost("google.com") && isMethodGET()) { _ in
+            HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .get(TestResponseBody.self, url: "https://google.com")
+            .assertResult(test: self) {
+                XCTAssertEqual($0.key, "value")
+
+        }
+    }
+    
+    func testPostSucceeds() {
+        stub(condition: isHost("google.com") && isMethodPOST()) { _ in
+            HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .post(TestResponseBody.self, url: "https://google.com")
+            .assertResult(test: self) {
+                XCTAssertEqual($0.key, "value")
+        }
     }
 }
     
