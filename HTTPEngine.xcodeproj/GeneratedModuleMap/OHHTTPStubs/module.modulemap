@@ -1,0 +1,4 @@
+module OHHTTPStubs {
+    umbrella "/Users/jacob.rakidzich/Documents/GitHub/HTTPEngine/.build/checkouts/OHHTTPStubs/Sources/OHHTTPStubs/include"
+    export *
+}
