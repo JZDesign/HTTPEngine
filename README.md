@@ -6,7 +6,7 @@ A convenience wrapper around Swift's Combine and URLSession to make `URLRequests
 ## SPM
 ```swift
 dependencies: [
-    .package(url: "https://github.com/JZDesign/HTTPEngine.git", .upToNextMajor(from: "0"))
+    .package(url: "https://github.com/JZDesign/HTTPEngine.git", .upToNextMajor(from: "0.2.0"))
 ],
 ```
 
