@@ -1,8 +1,11 @@
 import Foundation
 import Combine
 
+/// HTTP Request Header
 public typealias Header = [String: String]
+/// Boolean that represents the success or failure of the ResponseValidationClosure
 public typealias ValidResponse = Bool
+/// A function that takes the HTTPResonse's StatusCode in for comparison. Return `true` if the code is expected or `false` if the function should throw an error.
 public typealias ResponseValidationClosure = (Int) -> ValidResponse
 
 public struct HTTPEngine {
@@ -75,6 +78,7 @@ public struct HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
     public func makeRequest(
         method: HTTPMethod,

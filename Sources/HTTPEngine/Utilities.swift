@@ -2,6 +2,9 @@ import Foundation
 import Combine
 
 public extension URLRequest {
+    
+    /// Combine convenience method
+    /// - Returns: URLSession.DataTaskPublisher
     func dataTaskPublisher() -> URLSession.DataTaskPublisher {
         return URLSession.shared.dataTaskPublisher(for: self)
     }

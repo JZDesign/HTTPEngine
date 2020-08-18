@@ -27,8 +27,9 @@ public extension HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
-    public func makeRequestAndParseResponse<Response: Decodable>(
+    func makeRequestAndParseResponse<Response: Decodable>(
         _ decodableResponse: Response.Type,
         method: HTTPMethod,
         url: String,
@@ -64,8 +65,9 @@ public extension HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
-    public func makeRequestAndParseResponse<Body: Encodable, Response: Decodable>(
+    func makeRequestAndParseResponse<Body: Encodable, Response: Decodable>(
         _ decodableResponse: Response.Type,
         method: HTTPMethod,
         url: String,
@@ -95,6 +97,7 @@ public extension HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
     func get<Response: Decodable>(
         _ value: Response.Type,
@@ -120,6 +123,7 @@ public extension HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
     func post<Response: Decodable, Body: Encodable>(
         _ value: Response.Type,
@@ -145,6 +149,7 @@ public extension HTTPEngine {
     ///    ```swift
     ///    // example validator
     ///    validator: { $0 == 202 }
+    ///    // Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)
     ///    ```
     func post<Response: Decodable>(
         _ value: Response.Type,

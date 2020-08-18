@@ -1,17 +1,17 @@
 import Foundation
 
 public struct Errors {
-    enum Request: Error {
+    public enum Request: Error {
         case invalidURL
     }
 
-    enum Response: Error {
+    public enum Response: Error {
         case couldNotRetrieveStatusCode
         case unexpectedStatusCode(HTTPURLResponse)
         case redirect(Int)
         case unknown(Int)
 
-        enum ClientError: Error {
+        public enum ClientError: Error {
             case badRequest_400
             case invalidCredentials_401
             case forbidden_403
@@ -22,7 +22,7 @@ public struct Errors {
             case unkown(Int)
         }
 
-        enum ServerError: Error {
+        public enum ServerError: Error {
             case internalServerError_500
             case notImplemented_501
             case badGateway_502
@@ -31,7 +31,30 @@ public struct Errors {
             case unkown(Int)
         }
 
-        static func errorWith(statusCode: Int) -> Error? {
+        
+        /// Returns a human readable HTTP Error
+        /// - Parameter statusCode: HTTP Status Code
+        /// - Returns: Error?
+        ///
+        /// ```swift
+        /// code ~= 300...399 -> Errors.Response.redirect(statusCode)
+        /// code ~= 400 -> Errors.Response.ClientError.badRequest_400
+        /// code ~= 401 -> Errors.Response.ClientError.invalidCredentials_401
+        /// code ~= 403 -> Errors.Response.ClientError.forbidden_403
+        /// code ~= 404 -> Errors.Response.ClientError.notFound_404
+        /// code ~= 405 -> Errors.Response.ClientError.notAllowed_405
+        /// code ~= 409 -> Errors.Response.ClientError.conflict_409
+        /// code ~= 429 -> Errors.Response.ClientError.tooManyRequests_429
+        /// code ~= 402, 410...418, 430...499 -> Errors.Response.ClientError.unkown(statusCode)
+        /// code ~= 500 -> Errors.Response.ServerError.internalServerError_500
+        /// code ~= 501 -> Errors.Response.ServerError.notImplemented_501
+        /// code ~= 502 -> Errors.Response.ServerError.badGateway_502
+        /// code ~= 503 -> Errors.Response.ServerError.unavailable_503
+        /// code ~= 504 -> Errors.Response.ServerError.timeout_504
+        /// code ~= 505...599 -> Errors.Response.ServerError.unkown(statusCode)
+        /// default -> Errors.Response.unknown(statusCode)
+        ///```
+        public static func errorWith(statusCode: Int) -> Error? {
             switch statusCode {
             case 200...299: return nil
             case 300...399: return Errors.Response.redirect(statusCode)
