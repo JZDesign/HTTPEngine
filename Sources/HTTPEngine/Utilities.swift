@@ -39,6 +39,15 @@ infix operator ??? : TernaryPrecedence
 ///   - right: Error
 /// - Throws: The error from the right
 /// - Returns: The unwrapped optional from the left
+///
+/// ```swift
+///     var x: Int? = nil
+///     let y = try x ??? SomeError() // Throws some Error
+///
+///     var value: Int? = 1
+///     let z = try value ??? SomeError() // unwraps value
+/// ```
+///
 public func ???<T>(_ left: Optional<T>, right: Error) throws -> T {
     guard let value = left else { throw right }
     return value

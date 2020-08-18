@@ -37,6 +37,7 @@ public struct Errors {
         /// - Returns: Error?
         ///
         /// ```swift
+        /// code ~= 200...299 -> nil // Success!
         /// code ~= 300...399 -> Errors.Response.redirect(statusCode)
         /// code ~= 400 -> Errors.Response.ClientError.badRequest_400
         /// code ~= 401 -> Errors.Response.ClientError.invalidCredentials_401

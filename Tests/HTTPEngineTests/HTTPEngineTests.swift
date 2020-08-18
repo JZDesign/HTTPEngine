@@ -72,7 +72,7 @@ final class HTTPEngineTests: XCTestCase {
         }
 
         HTTPEngine()
-            .makeRequest(method: .get, url: "https://google.com", validator:  { $0 == 202 })
+            .makeRequest(method: .get, url: "https://google.com", validator: { $0 == 202 })
             .assertError(test: self) {
                 switch $0 {
                 case Errors.Response.unexpectedStatusCode(let response):
