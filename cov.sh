@@ -1,4 +1,9 @@
 #!/bin/sh
+brew ls --versions llvm
+if [[ $? != 0 ]]; then
+  brew install llvm
+fi
+
 BIN_PATH="$(swift build --show-bin-path)"
 XCTEST_PATH="$(find ${BIN_PATH} -name '*.xctest')"
 
