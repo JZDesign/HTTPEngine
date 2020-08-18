@@ -15,4 +15,4 @@ llvm-cov report \
     -use-color
 
 
-bash <(curl -s https://codecov.io/bash)
+bash -c '<(curl -s https://codecov.io/bash)'
