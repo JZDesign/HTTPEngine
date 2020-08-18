@@ -6,6 +6,8 @@ if [[ $? != 0 ]]; then
 fi
 
 echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.bashrc
+
 BIN_PATH="$(swift build --show-bin-path)"
 XCTEST_PATH="$(find ${BIN_PATH} -name '*.xctest')"
 
