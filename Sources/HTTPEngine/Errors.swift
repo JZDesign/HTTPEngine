@@ -1,3 +1,4 @@
+// swiftlint:disable nesting
 import Foundation
 
 public struct Errors {

@@ -5,14 +5,7 @@ import OHHTTPStubsSwift
 @testable import HTTPEngine
 
 final class HTTPEngineConvenienceMethodTests: XCTestCase {
-    static var allTests = [
-    ("make request and parse response decodes into type", testMakeRequestAndParseResponseDecodesIntoType),
-    ("make request and parse response throws if Decode fails", testMakeRequestAndParseResponseThrowsIfDecodeFails),
-    ("make request and parse response Encodes and Decodes into type", testMakeRequestAndParseResponseEncodesAndDecodesIntoType),
-    ("get succeeds", testGetSucceeds),
-    ("post succeeds", testPostSucceeds),
-    ]
-    
+
     func testMakeRequestAndParseResponseDecodesIntoType() {
         stub(condition: isHost("google.com") && isMethodGET()) { _ in
             HTTPStubsResponse(jsonObject: ["key":"value"], statusCode: 200, headers: nil)
@@ -25,7 +18,7 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
         }
         
     }
-    
+
     func testMakeRequestAndParseResponseThrowsIfDecodeFails() {
         stub(condition: isHost("google.com") && isMethodGET()) { _ in
             HTTPStubsResponse(jsonObject: [:], statusCode: 200, headers: nil)
@@ -46,7 +39,7 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
                 XCTAssertEqual($0.key, "value")
         }
     }
-    
+
     func testGetSucceeds() {
         stub(condition: isHost("google.com") && isMethodGET()) { _ in
             HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
@@ -59,7 +52,7 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
 
         }
     }
-    
+
     func testPostSucceeds() {
         stub(condition: isHost("google.com") && isMethodPOST()) { _ in
             HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
@@ -67,6 +60,42 @@ final class HTTPEngineConvenienceMethodTests: XCTestCase {
 
         HTTPEngine()
             .post(TestResponseBody.self, url: "https://google.com")
+            .assertResult(test: self) {
+                XCTAssertEqual($0.key, "value")
+        }
+    }
+    
+    func testPatchSucceeds() {
+        stub(condition: isHost("google.com") && isMethodPATCH()) { _ in
+            HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .patch(TestResponseBody.self, url: "https://google.com", body: nil as TestResponseBody?)
+            .assertResult(test: self) {
+                XCTAssertEqual($0.key, "value")
+        }
+    }
+    
+    func testPutSucceeds() {
+        stub(condition: isHost("google.com") && isMethodPUT()) { _ in
+            HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .put(TestResponseBody.self, url: "https://google.com", body: nil as TestResponseBody?)
+            .assertResult(test: self) {
+                XCTAssertEqual($0.key, "value")
+        }
+    }
+    
+    func testDeleteSucceeds() {
+        stub(condition: isHost("google.com") && isMethodDELETE()) { _ in
+            HTTPStubsResponse(jsonObject: ["key": "value"], statusCode: 200, headers: nil)
+        }
+
+        HTTPEngine()
+            .delete(TestResponseBody.self, url: "https://google.com", body: nil as TestResponseBody?)
             .assertResult(test: self) {
                 XCTAssertEqual($0.key, "value")
         }
