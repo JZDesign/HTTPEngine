@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTTPEngine Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/HTTPEngine" class="dashAnchor"></a>
+    <a title="HTTPEngine Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (28% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        HTTPEngine Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/URLRequest.html">URLRequest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Errors.html">Errors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Errors/Request.html">– Request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Errors/Response.html">– Response</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HTTPEngine.html">HTTPEngine</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10HTTPEngine6Headera">Header</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10HTTPEngine13ValidResponsea">ValidResponse</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>HTTPEngine</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPEngine</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAVABycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAVABycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV12buildRequest6method3url4body6header10Foundation10URLRequestVAA10HTTPMethodO_AH3URLVAH4DataVSgSDyS2SGSgtF"></a>
+                    <a name="//apple_ref/swift/Method/buildRequest(method:url:body:header:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV12buildRequest6method3url4body6header10Foundation10URLRequestVAA10HTTPMethodO_AH3URLVAH4DataVSgSDyS2SGSgtF">buildRequest(method:<wbr>url:<wbr>body:<wbr>header:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a URLRequest Object</p>
+
+<p>&ndash; Headers</p>
+
+<p>By default all requests have the <code>[&quot;Accept-Encoding&quot;: &quot;gzip;q=1.0,compress;q=0.5&quot;]</code> header included.</p>
+
+<p>All <code>.post, .put, &amp; .patch</code> requests also contain <code>[&quot;Content-Type&quot;: &quot;application/json&quot;]</code> by default.</p>
+
+<p>These values can be overridden by including those headers as arguments when calling this function</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">buildRequest</span><span class="p">(</span>
+    <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">header</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine6Headera">Header</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLRequest</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTTPMethod - <code>.get, .put. post</code> etc.,</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A URL Object</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data?: The body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>header</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A dictionary of HTTP Request Headers - <code>[&quot;Content-Type&quot;: &quot;text&quot;, &quot;Some Key&quot;: &quot;Some Value&quot;]</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A fully constructed URLRequest</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV11makeRequest6method3url4body6header9validator7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAA10HTTPMethodO_SSANSgSDyS2SGSgSbSicSgtF"></a>
+                    <a name="//apple_ref/swift/Method/makeRequest(method:url:body:header:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV11makeRequest6method3url4body6header9validator7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAA10HTTPMethodO_SSANSgSDyS2SGSgSbSicSgtF">makeRequest(method:<wbr>url:<wbr>body:<wbr>header:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a request via HTTP</p>
+
+<p>&ndash; Headers</p>
+
+<p>By default all requests have the <code>[&quot;Accept-Encoding&quot;: &quot;gzip;q=1.0,compress;q=0.5&quot;]</code> header included.</p>
+
+<p>All <code>.post, .put, &amp; .patch</code> requests also contain <code>[&quot;Content-Type&quot;: &quot;application/json&quot;]</code> by default.</p>
+
+<p>These values can be overridden by including those headers as arguments when calling this function</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeRequest</span><span class="p">(</span>
+    <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span>
+    <span class="n">url</span> <span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">header</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine6Headera">Header</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Data</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTTPMethod - <code>.get, .put. post</code> etc.,</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data?: The body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>header</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A dictionary of HTTP Request Headers - <code>[&quot;Content-Type&quot;: &quot;text&quot;, &quot;Some Key&quot;: &quot;Some Value&quot;]</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV27makeRequestAndParseResponse_6method3url6header9validator7Combine12AnyPublisherVyxs5Error_pGxm_AA10HTTPMethodOSSSDyS2SGSgSbSicSgtSeRzlF"></a>
+                    <a name="//apple_ref/swift/Method/makeRequestAndParseResponse(_:method:url:header:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV27makeRequestAndParseResponse_6method3url6header9validator7Combine12AnyPublisherVyxs5Error_pGxm_AA10HTTPMethodOSSSDyS2SGSgSbSicSgtSeRzlF">makeRequestAndParseResponse(_:<wbr>method:<wbr>url:<wbr>header:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a request via HTTP and Decodes the response</p>
+
+<p>&ndash; Headers</p>
+
+<p>By default all requests have the <code>[&quot;Accept-Encoding&quot;: &quot;gzip;q=1.0,compress;q=0.5&quot;]</code> header included.</p>
+
+<p>All <code>.post, .put, &amp; .patch</code> requests also contain <code>[&quot;Content-Type&quot;: &quot;application/json&quot;]</code> by default.</p>
+
+<p>These values can be overridden by including those headers as arguments when calling this function</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">makeRequestAndParseResponse</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">decodableResponse</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">header</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine6Headera">Header</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTTPMethod - <code>.get, .put. post</code> etc.,</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>header</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A dictionary of HTTP Request Headers - <code>[&quot;Content-Type&quot;: &quot;text&quot;, &quot;Some Key&quot;: &quot;Some Value&quot;]</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV27makeRequestAndParseResponse_6method3url4body6header9validator7Combine12AnyPublisherVyq_s5Error_pGq_m_AA10HTTPMethodOSSxSgSDyS2SGSgSbSicSgtSERzSeR_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/makeRequestAndParseResponse(_:method:url:body:header:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV27makeRequestAndParseResponse_6method3url4body6header9validator7Combine12AnyPublisherVyq_s5Error_pGq_m_AA10HTTPMethodOSSxSgSDyS2SGSgSbSicSgtSERzSeR_r0_lF">makeRequestAndParseResponse(_:<wbr>method:<wbr>url:<wbr>body:<wbr>header:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Headers</p>
+
+<p>By default all requests have the <code>[&quot;Accept-Encoding&quot;: &quot;gzip;q=1.0,compress;q=0.5&quot;]</code> header included.</p>
+
+<p>All <code>.post, .put, &amp; .patch</code> requests also contain <code>[&quot;Content-Type&quot;: &quot;application/json&quot;]</code> by default.</p>
+
+<p>These values can be overridden by including those headers as arguments when calling this function</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">makeRequestAndParseResponse</span><span class="o">&lt;</span><span class="kt">Body</span><span class="p">:</span> <span class="kt">Encodable</span><span class="p">,</span> <span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">decodableResponse</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Body</span><span class="p">?,</span>
+    <span class="nv">header</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine6Headera">Header</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTTPMethod - <code>.get, .put. post</code> etc.,</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Encodable?: The encodable object that represents body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>header</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A dictionary of HTTP Request Headers - <code>[&quot;Content-Type&quot;: &quot;text&quot;, &quot;Some Key&quot;: &quot;Some Value&quot;]</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV3get_3url9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSSbSicSgtSeRzlF"></a>
+                    <a name="//apple_ref/swift/Method/get(_:url:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV3get_3url9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSSbSicSgtSeRzlF">get(_:<wbr>url:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a request via HTTP and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="k">get</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV4post_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/post(_:url:body:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV4post_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF">post(_:<wbr>url:<wbr>body:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a POST request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Body</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Encodable?: The encodable object that represents body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV4post_3url9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSSbSicSgtSeRzlF"></a>
+                    <a name="//apple_ref/swift/Method/post(_:url:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV4post_3url9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSSbSicSgtSeRzlF">post(_:<wbr>url:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a POST request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV5patch_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/patch(_:url:body:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV5patch_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF">patch(_:<wbr>url:<wbr>body:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a PATCH request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">patch</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Body</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Encodable?: The encodable object that represents body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV3put_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/put(_:url:body:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV3put_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF">put(_:<wbr>url:<wbr>body:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a PUT request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">put</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Body</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Encodable?: The encodable object that represents body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10HTTPEngineAAV6delete_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/delete(_:url:body:validator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10HTTPEngineAAV6delete_3url4body9validator7Combine12AnyPublisherVyxs5Error_pGxm_SSq_SgSbSicSgtSeRzSER_r0_lF">delete(_:<wbr>url:<wbr>body:<wbr>validator:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a DELETE request via HTTP, Encodes the body and Decodes the response</p>
+
+<p>&ndash; Validation</p>
+
+<p>By default the validation checks for a 200-299 status code and fails if the code is out of bounds</p>
+<pre class="highlight swift"><code>   <span class="c1">// example validator</span>
+   <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">}</span>
+   <span class="c1">// Failure throws Errors.Response.unexpectedStatusCode(HTTPURLRequest)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">delete</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Response</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">Body</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decodableResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Decodable - An object that represents the response body</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL domain + path as a string: <code>&quot;abc.com/some/path&quot;</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Encodable?: The encodable object that represents body data to send with a request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>(Int) -&gt; Bool</code> - A function to validate the response code of the request. By default, makeRequest() will fail if the status code does not fall within the 200 - 299 range. To override this, pass in a function that compares the status code and returns a boolean. True == success, False == failure. Upon failure an error will be thrown that contains the HTTPURLResponse for inspection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>AnyPubliser<Data, Error></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-08-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

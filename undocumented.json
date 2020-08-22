@@ -1,0 +1,264 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 4,
+      "symbol": "Errors",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 5,
+      "symbol": "Errors.Request",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 6,
+      "symbol": "Errors.Request.invalidURL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 9,
+      "symbol": "Errors.Response",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 10,
+      "symbol": "Errors.Response.couldNotRetrieveStatusCode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 11,
+      "symbol": "Errors.Response.unexpectedStatusCode(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 12,
+      "symbol": "Errors.Response.redirect(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 13,
+      "symbol": "Errors.Response.unknown(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 15,
+      "symbol": "Errors.Response.ClientError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 16,
+      "symbol": "Errors.Response.ClientError.badRequest_400",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 17,
+      "symbol": "Errors.Response.ClientError.invalidCredentials_401",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 18,
+      "symbol": "Errors.Response.ClientError.forbidden_403",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 19,
+      "symbol": "Errors.Response.ClientError.notFound_404",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 20,
+      "symbol": "Errors.Response.ClientError.notAllowed_405",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 21,
+      "symbol": "Errors.Response.ClientError.conflict_409",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 22,
+      "symbol": "Errors.Response.ClientError.tooManyRequests_429",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 23,
+      "symbol": "Errors.Response.ClientError.unkown(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 26,
+      "symbol": "Errors.Response.ServerError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 27,
+      "symbol": "Errors.Response.ServerError.internalServerError_500",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 28,
+      "symbol": "Errors.Response.ServerError.notImplemented_501",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 29,
+      "symbol": "Errors.Response.ServerError.badGateway_502",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 30,
+      "symbol": "Errors.Response.ServerError.unavailable_503",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 31,
+      "symbol": "Errors.Response.ServerError.timeout_504",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/Errors.swift",
+      "line": 32,
+      "symbol": "Errors.Response.ServerError.unkown(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPEngine.swift",
+      "line": 6,
+      "symbol": "HTTPEngine",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPEngine.swift",
+      "line": 13,
+      "symbol": "HTTPEngine",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPEngine.swift",
+      "line": 14,
+      "symbol": "HTTPEngine.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 4,
+      "symbol": "HTTPMethod",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 5,
+      "symbol": "HTTPMethod.post",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 6,
+      "symbol": "HTTPMethod.get",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 7,
+      "symbol": "HTTPMethod.patch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 8,
+      "symbol": "HTTPMethod.delete",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 9,
+      "symbol": "HTTPMethod.put",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 10,
+      "symbol": "HTTPMethod.head",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 11,
+      "symbol": "HTTPMethod.options",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 12,
+      "symbol": "HTTPMethod.trace",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/HTTPEngine/HTTPEngine/Sources/HTTPEngine/HTTPMethod.swift",
+      "line": 13,
+      "symbol": "HTTPMethod.connect",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/HTTPEngine/HTTPEngine"
+}

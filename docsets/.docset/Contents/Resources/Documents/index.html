@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (28% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/URLRequest.html">URLRequest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Errors.html">Errors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Errors/Request.html">– Request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Errors/Response.html">– Response</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HTTPEngine.html">HTTPEngine</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10HTTPEngine6Headera">Header</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10HTTPEngine25ResponseValidationClosurea">ResponseValidationClosure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10HTTPEngine13ValidResponsea">ValidResponse</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='httpengine' class='heading'>HTTPEngine</h1>
+
+<p><img src="https://github.com/JZDesign/HTTPEngine/workflows/Swift/badge.svg" alt="Swift"> <img src="https://github.com/JZDesign/HTTPEngine/workflows/PublishDocumentation/badge.svg" alt="PublishDocumentation"> <a href="https://jzdesign.github.io/HTTPEngine/"><img src="https://img.shields.io/badge/Jazzy-Documentation-634fb3.svg?style=flat" alt="Docs"></a> <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/SPM-Compatible-e66f20.svg?style=flat" alt="SPM compatible"></a> <a href="https://codebeat.co/projects/github-com-jzdesign-httpengine-master"><img src="https://codebeat.co/badges/839231b0-5d79-4115-af21-dacf4f38457f" alt="codebeat badge"></a> <a href="https://github.com/JZDesign/HTTPEngine/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-335577.svg?style=flat" alt="License"></a> </p>
+
+<p>A convenience wrapper around Swift&rsquo;s Combine and URLSession to make <code>URLRequests</code></p>
+<h2 id='spm' class='heading'>SPM</h2>
+<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/JZDesign/HTTPEngine.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.2.0"</span><span class="p">))</span>
+<span class="p">],</span>
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='get-and-decode' class='heading'>Get and decode</h3>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Recipes</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">imageURLs</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">ingredients</span><span class="p">:</span> <span class="p">[</span><span class="kt">Ingredient</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">steps</span><span class="p">:</span> <span class="p">[</span><span class="kt">Step</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">engine</span> <span class="o">=</span> <span class="kt">HTTPEngine</span><span class="p">()</span>
+
+<span class="n">engine</span>
+    <span class="o">.</span><span class="nf">get</span><span class="p">([</span><span class="kt">Recipes</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://my-recipes.com/baby-back-ribs"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">assertNoFailure</span><span class="p">()</span> <span class="c1">// don't do this</span>
+    <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">recipes</span> <span class="k">in</span>
+<span class="p">}</span>
+
+</code></pre>
+<h3 id='post-with-encode-and-decode' class='heading'>Post with encode and decode</h3>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">NewUser</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">userName</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">NewUserResponse</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">,</span> <span class="n">accessToken</span><span class="p">,</span> <span class="nv">scope</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">newUser</span> <span class="o">=</span> <span class="kt">NewUser</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"Dudemus"</span><span class="p">,</span> <span class="nv">email</span><span class="p">:</span> <span class="s">"mydude1@electronmail.com"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"This_R3@LLy_5h0uld_b3_encrypt3d"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">engine</span> <span class="o">=</span> <span class="kt">HTTPEngine</span><span class="p">()</span>
+
+<span class="n">engine</span>
+    <span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="kt">NewUserResponse</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://auth.somedomain.com"</span><span class="p">,</span> <span class="nv">body</span><span class="p">:</span> <span class="n">newUser</span><span class="p">,</span> <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">202</span> <span class="p">})</span>
+    <span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+        <span class="c1">// handle non 202 response or other errors</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="kt">UserStore</span><span class="p">)</span>
+
+</code></pre>
+<h3 id='standard-requests' class='heading'>Standard Requests</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">engine</span> <span class="o">=</span> <span class="kt">HTTPEngine</span><span class="p">()</span>
+
+<span class="n">engine</span>
+    <span class="o">.</span><span class="nf">makeRequest</span><span class="p">(</span><span class="nv">method</span><span class="p">:</span> <span class="o">.</span><span class="n">delete</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://not-google.com/"</span><span class="p">,</span> <span class="nv">body</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">header</span><span class="p">:</span> <span class="n">headers</span><span class="p">,</span> <span class="nv">validator</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">204</span> <span class="p">})</span>
+    <span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+        <span class="c1">// handle non 204 response or other errors</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span>
+        <span class="c1">// handle response data</span>
+    <span class="p">}</span>
+</code></pre>
+<h2 id='a-href-https-jzdesign-github-io-httpengine-view-documentation-a' class='heading'><a href="https://jzdesign.github.io/HTTPEngine/">View Documentation</a></h2>
+
+<p>Documentation generated by <a href="https://github.com/realm/jazzy">Jazzy</a>.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-08-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
