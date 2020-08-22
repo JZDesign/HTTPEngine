@@ -16,6 +16,7 @@ let package = Package(
             targets: ["HTTPEngine"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/JZDesign/SwiftUtilities.git", .upToNextMajor(from: "0.1.0")),
         .package(url: "https://github.com/AliSoftware/OHHTTPStubs.git", .upToNextMajor(from: "9.0.0"))
     ],
     targets: [
@@ -23,7 +24,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "HTTPEngine",
-            dependencies: []),
+            dependencies: ["SwiftUtilities"]),
         .testTarget(
             name: "HTTPEngineTests",
             dependencies: [
